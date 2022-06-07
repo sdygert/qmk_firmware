@@ -4,8 +4,8 @@
 # OPT_DEFS += -DLEFT_LEDS
 -
 CUSTOM_MATRIX    = lite # Custom matrix file for the ErgoDox EZ
-NKRO_ENABLE      = yes           # Enable N-Key Rollover
-UNICODE_ENABLE   = no  # Unicode
+NKRO_ENABLE      = yes  # Enable N-Key Rollover
+UNICODE_ENABLE   = no   # Unicode
 SWAP_HANDS_ENABLE= no   # Allow swapping hands of keyboard
 
 KEY_LOCK_ENABLE = yes  # Enable Key Lock
