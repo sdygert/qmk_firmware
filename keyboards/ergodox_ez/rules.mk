@@ -16,6 +16,8 @@ NKRO_ENABLE      = yes           # Enable N-Key Rollover
 UNICODE_ENABLE   = no  # Unicode
 SWAP_HANDS_ENABLE= no   # Allow swapping hands of keyboard
 
+KEY_LOCK_ENABLE = yes  # Enable Key Lock
+
 RGB_MATRIX_ENABLE = no # enable later
 
 # project specific files
