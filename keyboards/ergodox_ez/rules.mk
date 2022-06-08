@@ -8,9 +8,11 @@ NKRO_ENABLE      = yes  # Enable N-Key Rollover
 UNICODE_ENABLE   = no   # Unicode
 SWAP_HANDS_ENABLE= no   # Allow swapping hands of keyboard
 
-KEY_LOCK_ENABLE = yes  # Enable Key Lock
+KEY_LOCK_ENABLE = yes   # Enable Key Lock
 
-RGB_MATRIX_ENABLE = no # enable later
+RGB_MATRIX_ENABLE = no # Enable Glow
+RGB_MATRIX_DRIVER = IS31FL3731
+DEBOUNCE_TYPE = sym_eager_pr
 
 # project specific files
 SRC += matrix.c
