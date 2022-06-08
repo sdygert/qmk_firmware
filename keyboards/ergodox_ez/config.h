@@ -20,6 +20,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#include "config_common.h"
+
+#define ORYX_CONFIGURATOR
+
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x3297
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    ZSA Technology Labs
+#define PRODUCT_ID      0x4974
+#define PRODUCT         ErgoDox EZ
 
 /* key matrix size */
 #define MATRIX_ROWS 14
