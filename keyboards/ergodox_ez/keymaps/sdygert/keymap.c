@@ -28,7 +28,6 @@ enum custom_keycodes {
 // Space Cadet
 // Autoshift (maybe, need to decide which keys and so there might be a good number missing)
 // Caps Word (use both shifts)
-// #define ORYX_CONFIGURATOR
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
