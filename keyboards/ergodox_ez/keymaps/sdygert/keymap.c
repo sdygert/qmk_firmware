@@ -16,16 +16,20 @@ enum custom_keycodes {
 };
 
 // TODO:
-// LCA(KC_NO): define behavior for key press.
-// TT vs TG vs LT: look into the differences (TO seems like a better option than TG)
-// TT(SYMB): look for something more interesting to do with this key
-// RGB Matrix Lighting
-// LT(SYMB,KC_GRV) doesn't make much sense since there's two behaviors for holding down keys
+// TT vs TG vs LT: look into the differences (TO seems like a better option than TG) https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers
+// RGB Matrix Lighting https://docs.qmk.fm/#/feature_rgb_matrix
+// https://medium.com/the-ergo/how-to-light-up-layers-and-specific-keys-on-ergodox-ez-glow-98bdce67ce9b
+
 // Mod Tap with ORing https://docs.qmk.fm/#/mod_tap
-// Assign NOOP keys
+// Assign NOOP keys and LCA(KC_NO)
+//      Layer key + numbers?
+//      Number key layer with numberics on home row
 
 // Potential Future Upgrades:
 // Leader Keys https://docs.qmk.fm/#/feature_leader_key
+
+// Notes:
+// Space cadet (parenthesis on shift keys causes shift keys to slow down)
 
 
 // clang-format off
