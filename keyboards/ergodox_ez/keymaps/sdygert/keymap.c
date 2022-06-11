@@ -22,7 +22,6 @@ enum custom_keycodes {
 // RGB Matrix Lighting
 // LT(SYMB,KC_GRV) doesn't make much sense since there's two behaviors for holding down keys
 // Mod Tap with ORing https://docs.qmk.fm/#/mod_tap
-// Mouse Delay andd other mouse settings in config.h https://docs.qmk.fm/#/feature_mouse_keys
 // Assign NOOP keys
 
 // Potential Future Upgrades:
