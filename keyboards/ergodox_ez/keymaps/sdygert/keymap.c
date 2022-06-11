@@ -15,19 +15,21 @@ enum custom_keycodes {
 #endif
 };
 
-// clang-format off
 // TODO:
 // LCA(KC_NO): define behavior for key press.
 // TT vs TG vs LT: look into the differences (TO seems like a better option than TG)
 // TT(SYMB): look for something more interesting to do with this key
 // RGB Matrix Lighting
 // LT(SYMB,KC_GRV) doesn't make much sense since there's two behaviors for holding down keys
-// Leader Keys
 // Mod Tap with ORing
 // Mouse Delay andd other mouse settings in config.h
 // Space Cadet
-// Autoshift (maybe, need to decide which keys and so there might be a good number missing)
-// Caps Word (use both shifts)
+
+// Potential Future Upgrades:
+// Leader Keys
+
+
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *

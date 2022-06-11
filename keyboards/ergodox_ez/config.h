@@ -24,6 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define ORYX_CONFIGURATOR
 
+// Caps Word
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x3297
 #define DEVICE_VER      0x0001
