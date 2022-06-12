@@ -16,7 +16,6 @@ enum custom_keycodes {
 };
 
 // TODO:
-// TT vs TG vs LT: look into the differences (TO seems like a better option than TG) https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers
 // RGB Matrix Lighting https://docs.qmk.fm/#/feature_rgb_matrix
 // https://medium.com/the-ergo/how-to-light-up-layers-and-specific-keys-on-ergodox-ez-glow-98bdce67ce9b
 
