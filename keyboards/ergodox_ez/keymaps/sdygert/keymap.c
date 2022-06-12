@@ -28,7 +28,7 @@ enum custom_keycodes {
 // Leader Keys https://docs.qmk.fm/#/feature_leader_key
 
 // Notes:
-// Space cadet (parenthesis on shift keys causes shift keys to slow down)
+// Space cadet (parenthesis on shift keys) causes shift keys to slow down
 
 
 // clang-format off
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
  * |--------+------+------+------+------+------|CtlAlt|           | NOOP |------+------+------+------+------+--------|
- * |LShfLPrn|Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//Ctrl|RShfRPrn|
+ * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//Ctrl| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |GrvEsc|  '"  |AltShf| Left | Right|                                       |  Up  | Down |   [  |   ]  | NOOP |
  *   `----------------------------------'                                       `----------------------------------'
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_LEFT,              KC_RGHT,      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,              KC_MINS,
   KC_DEL,          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    TG(SYMB),             TG(MDIA),     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,              KC_BSLS,
   KC_BSPC,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  KC_LSPO,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    LCA(KC_NO),           KC_NO,        KC_N,    KC_M,    KC_COMM, KC_DOT,  CTL_T(KC_SLSH),    KC_RSPC,
+  KC_LSFT,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    LCA(KC_NO),           KC_NO,        KC_N,    KC_M,    KC_COMM, KC_DOT,  CTL_T(KC_SLSH),    KC_RSFT,
   KC_GRV,          KC_QUOT,     LALT(KC_LSFT), KC_LEFT, KC_RGHT,                                                       KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC,           KC_NO,
                                                            ALT_T(KC_APP), KC_LGUI,              KC_LALT, CTL_T(KC_ESC),
                                                                           KC_HOME,              KC_PGUP,
