@@ -27,7 +27,7 @@ enum custom_keycodes {
 // Mod Tap with ORing https://docs.qmk.fm/#/mod_tap
 // Assign NOOP keys and LCA(KC_NO)
 //      Layer key + numbers?
-//      Number key layer with numberics on home row
+
 
 // Potential Future Upgrades:
 // Leader Keys https://docs.qmk.fm/#/feature_leader_key
@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   =    |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   -    |
+ * |   =    | 1/F1 | 2/F2 | 3/F3 | 4/F4 | 5/F5 | LEFT |           | RIGHT| 6/F6 | 7/F7 | 8/F8 | 9/F9 | 0/F10| -/F11  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Del    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L2  |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * | Del    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L2  |   Y  |   U  |   I  |   O  |   P  | \/F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
  * |--------+------+------+------+------+------|CtlAlt|           | NOOP |------+------+------+------+------+--------|
@@ -61,14 +61,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [BASE] = LAYOUT_ergodox_pretty(
   // left hand
-  KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_LEFT,              KC_RGHT,      KC_6,    KC_7,    KC_8,    KC_9,          KC_0,              KC_MINS,
-  KC_DEL,          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    TG(SYMB),             TG(MDIA),     KC_Y,    KC_U,    KC_I,    KC_O,          KC_P,              KC_BSLS,
-  KC_BSPC,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,          LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  KC_LSFT,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    LCA(KC_NO),           KC_NO,        KC_N,    KC_M,    KC_COMM, ALT_T(KC_DOT), CTL_T(KC_SLSH),    KC_RSFT,
-  KC_GRV,          KC_QUOT,     LALT(KC_LSFT), KC_LEFT, KC_RGHT,                                                       KC_UP,   KC_DOWN, KC_LBRC,       KC_RBRC,           KC_NO,
-                                                           ALT_T(KC_APP), KC_LGUI,              KC_LALT, CTL_T(KC_ESC),
+  KC_EQL,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_LEFT,              KC_RGHT,  LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
+  KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           TG(SYMB),             TG(MDIA), KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
+  KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                 KC_H,     KC_J,           KC_K,           KC_L,           LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
+  KC_LSFT,  CTL_T(KC_Z),    KC_X,           KC_C,           KC_V,           KC_B,           LCA(KC_NO),           KC_NO,    KC_N,           KC_M,           KC_COMM,        ALT_T(KC_DOT),     CTL_T(KC_SLSH),    KC_RSFT,
+  KC_GRV,   KC_QUOT,        LALT(KC_LSFT),  KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
+                                                                            ALT_T(KC_APP),  KC_LGUI,              KC_LALT,  CTL_T(KC_ESC),
                                                                           KC_HOME,              KC_PGUP,
-                                                         KC_SPC, KC_BSPC, KC_END,               KC_PGDN, KC_TAB, KC_ENT
+                                                            KC_SPC,         KC_BSPC,        KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
 ),
 /* Keymap 1: Symbol Layer
  *
@@ -208,6 +208,79 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case VRSN:
                 SEND_STRING(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
                 return false;
+            case LT(0,KC_1):
+                // https://github.com/qmk/qmk_firmware/blob/master/docs/mod_tap.md#intercepting-mod-taps=
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F1); // Intercept hold function to send F1
+                    return false;
+                }
+                return true;
+            case LT(0,KC_2):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F2); // Intercept hold function to send F2
+                    return false;
+                }
+                return true;
+            case LT(0,KC_3):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F3); // Intercept hold function to send F3
+                    return false;
+                }
+                return true;
+            case LT(0,KC_4):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F4); // Intercept hold function to send F4
+                    return false;
+                }
+                return true;
+            case LT(0,KC_5):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F5); // Intercept hold function to send F5
+                    return false;
+                }
+                return true;
+            case LT(0,KC_6):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F6); // Intercept hold function to send F6
+                    return false;
+                }
+                return true;
+            case LT(0,KC_7):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F7); // Intercept hold function to send F7
+                    return false;
+                }
+                return true;
+            case LT(0,KC_8):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F8); // Intercept hold function to send F8
+                    return false;
+                }
+                return true;
+            case LT(0,KC_9):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F9); // Intercept hold function to send F9
+                    return false;
+                }
+                return true;
+            case LT(0,KC_0):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F10); // Intercept hold function to send F10
+                    return false;
+                }
+                return true;
+            case LT(0,KC_MINS):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F11); // Intercept hold function to send F11
+                    return false;
+                }
+                return true;
+            case LT(0,KC_BSLS):
+                if (!record->tap.count && record->event.pressed) {
+                    tap_code16(KC_F12); // Intercept hold function to send F12
+                    return false;
+                }
+                return true;
         }
     }
     return true;
