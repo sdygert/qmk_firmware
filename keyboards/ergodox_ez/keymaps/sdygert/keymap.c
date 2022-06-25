@@ -28,6 +28,8 @@ enum custom_keycodes {
 // Assign NOOP keys and LCA(KC_NO)
 //      Layer key + numbers?
 
+// Use Left and Right keys on number row
+// Lock key? Macro key?
 
 // Potential Future Upgrades:
 // Leader Keys https://docs.qmk.fm/#/feature_leader_key
@@ -67,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LSFT,  CTL_T(KC_Z),    KC_X,           KC_C,           KC_V,           KC_B,           LCA(KC_NO),           KC_NO,    KC_N,           KC_M,           KC_COMM,        ALT_T(KC_DOT),     CTL_T(KC_SLSH),    KC_RSFT,
   KC_GRV,   KC_QUOT,        LALT(KC_LSFT),  KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
                                                                             ALT_T(KC_APP),  KC_LGUI,              KC_LALT,  CTL_T(KC_ESC),
-                                                                          KC_HOME,              KC_PGUP,
+                                                                                            KC_HOME,              KC_PGUP,
                                                             KC_SPC,         KC_BSPC,        KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
 ),
 /* Keymap 1: Symbol Layer
@@ -105,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Media and mouse keys
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |RgbCycl |      |MsAcl0|MsAcl1|MsAcl2|      |      |           |      |      |      |      |      |      |        |
+ * |RgbCycl |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |RbgRCycl|      | Lclk | MsUp | Rclk |      |      |           |      | Play |      |      |      |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -125,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [MDIA] = LAYOUT_ergodox_pretty(
   // left hand
-  RGB_MOD, KC_TRNS, KC_ACL0, KC_ACL1, KC_ACL2, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  RGB_MOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   RGB_RMOD,KC_TRNS, KC_BTN1, KC_MS_U, KC_BTN2, KC_TRNS, KC_TRNS,     KC_TRNS, KC_MPLY, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   RGB_M_P, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,                       KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_TRNS, KC_MPLY,
   RGB_M_B, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_MPRV, KC_MNXT, KC_TRNS, KC_TRNS,
