@@ -20,10 +20,6 @@ enum custom_keycodes {
 };
 
 // TODO:
-// RGB Matrix Lighting https://docs.qmk.fm/#/feature_rgb_matrix
-// https://medium.com/the-ergo/how-to-light-up-layers-and-specific-keys-on-ergodox-ez-glow-98bdce67ce9b
-// https://github.com/qmk/qmk_firmware/blob/master/keyboards/ergodox_ez/readme.md
-
 // Mod Tap with ORing https://docs.qmk.fm/#/mod_tap
 // Assign NOOP keys and LCA(KC_NO)
 //      Layer key + numbers?
@@ -293,6 +289,9 @@ void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_COLOR_LAYER_0
     rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
 #endif
+
+    // disable the rgb matrix
+    rgb_matrix_disable();
 };
 
 // Runs whenever there is a layer state change.
