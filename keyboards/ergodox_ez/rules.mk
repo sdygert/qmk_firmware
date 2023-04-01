@@ -21,7 +21,7 @@ SWAP_HANDS_ENABLE= no   # Allow swapping hands of keyboard
 KEY_LOCK_ENABLE = yes   # Enable Key Lock
 CAPS_WORD_ENABLE= yes	# Enable Caps Word
 
-RGB_MATRIX_ENABLE = yes # Enable Glow
+RGB_MATRIX_ENABLE = no # Enable Glow
 RGB_MATRIX_DRIVER = IS31FL3731
 DEBOUNCE_TYPE = sym_eager_pr
 
