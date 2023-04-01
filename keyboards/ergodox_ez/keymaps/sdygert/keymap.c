@@ -19,21 +19,6 @@ enum custom_keycodes {
 // #endif
 };
 
-// TODO:
-// Mod Tap with ORing https://docs.qmk.fm/#/mod_tap
-// Assign NOOP keys and LCA(KC_NO)
-//      Layer key + numbers?
-
-// Use Left and Right keys on number row
-// Lock key? Macro key?
-
-// Potential Future Upgrades:
-// Leader Keys https://docs.qmk.fm/#/feature_leader_key
-
-// Notes:
-// Space cadet (parenthesis on shift keys) causes shift keys to slow down
-
-
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
