@@ -100,6 +100,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define RGBLIGHT_EFFECT_RGB_TEST
 // #define RGBLIGHT_EFFECT_ALTERNATING
 // #define RGBLIGHT_EFFECT_TWINKLE
+// #define RGB_DI_PIN D7
 // #define RGBLIGHT_ANIMATIONS
 // #define RGBLIGHT_HUE_STEP 12
 // #define RGBLIGHT_SAT_STEP 255
@@ -142,7 +143,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_MATRIX_LED_PROCESS_LIMIT 5
 #define RGB_MATRIX_LED_FLUSH_LIMIT 26
 
-#define ENABLE_RGB_MATRIX_SOLID_COLOR
+// #define ENABLE_RGB_MATRIX_SOLID_COLOR
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
