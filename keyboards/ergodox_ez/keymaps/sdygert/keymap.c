@@ -29,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Del    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L2  |   Y  |   U  |   I  |   O  |   P  | \/F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
- * |--------+------+------+------+------+------|CtlAlt|           | Caps |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|      |           | Caps |------+------+------+------+------+--------|
  * | LShift |Z/Ctrl|X/Alt |C/Shft|   V  |   B  |      |           |      |   N  |   M  |,/Shft|./Alt |//Ctrl| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |   `  |PrtScn|AltShf| Left | Right|                                       |  Up  | Down |   [  |   ]  |  L3  |
+ *   |   `  |PrtScn|      | Left | Right|                                       |  Up  | Down |   [  |   ]  |  L3  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        |AppAlt| LGui |       | Alt  |Ctrl/Esc|
@@ -47,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_EQL,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_LEFT,              KC_RGHT,  LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
   KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           TG(SYMB),             TG(MDIA), KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
   KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  KC_LSFT,  CTL_T(KC_Z),    ALT_T(KC_X),    SFT_T(KC_C),    KC_V,           KC_B,           LCA(KC_NO),           KC_CAPS,  KC_N,           KC_M,           SFT_T(KC_COMM), ALT_T(KC_DOT),     CTL_T(KC_SLSH),    KC_RSFT,
-  KC_GRV,   KC_PSCR,        LALT(KC_LSFT),  KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
+  KC_LSFT,  CTL_T(KC_Z),    ALT_T(KC_X),    SFT_T(KC_C),    KC_V,           KC_B,           KC_NO,                KC_CAPS,  KC_N,           KC_M,           SFT_T(KC_COMM), ALT_T(KC_DOT),     CTL_T(KC_SLSH),    KC_RSFT,
+  KC_GRV,   KC_PSCR,        KC_NO,          KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
                                                                             ALT_T(KC_APP),  KC_LGUI,              KC_LALT,  CTL_T(KC_ESC),
                                                                                             KC_HOME,              KC_PGUP,
                                                             KC_SPC,         KC_BSPC,        KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
