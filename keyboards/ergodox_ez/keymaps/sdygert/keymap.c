@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|CtlAlt|           | Caps |------+------+------+------+------+--------|
  * | LShift |Z/Ctrl|X/Alt |C/Shft|   V  |   B  |      |           |      |   N  |   M  |,/Shft|./Alt |//Ctrl| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |GrvEsc|PrtScn|AltShf| Left | Right|                                       |  Up  | Down |   [  |   ]  |  L3  |
+ *   |   `  |PrtScn|AltShf| Left | Right|                                       |  Up  | Down |   [  |   ]  |  L3  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        |AppAlt| LGui |       | Alt  |Ctrl/Esc|
