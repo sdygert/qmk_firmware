@@ -10,7 +10,7 @@ enum layers {
 };
 
 enum custom_keycodes {
-    VRSN = EZ_SAFE_RANGE,
+    VRSN = SAFE_RANGE,
     k
 // #ifdef ORYX_CONFIGURATOR
 //     VRSN = EZ_SAFE_RANGE,k
