@@ -23,7 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ORYX_CONFIGURATOR
 
 // Caps Word
-#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+// https://docs.qmk.fm/#/feature_caps_word
+//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 /* key matrix size */
 #define MATRIX_ROWS 14
