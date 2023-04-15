@@ -53,7 +53,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TOGGLE  1
 
 #define TAPPING_TERM    200
-#define PERMISSIVE_HOLD // add permissive hold. see https://docs.qmk.fm/#/tap_hold
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
