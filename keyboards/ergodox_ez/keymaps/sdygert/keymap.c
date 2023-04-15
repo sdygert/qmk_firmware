@@ -1,8 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-static void ergodox_right_leds_on(void);
-static void ergodox_right_leds_off(void);
+static void tap_code16_with_leds(uint16_t keycode);
 
 enum layers {
     BASE,  // default layer
@@ -201,15 +200,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // clang-format on
 
-void ergodox_right_leds_on()
+void tap_code16_with_leds(uint16_t keycode)
 {
     ergodox_right_led_1_on();
     ergodox_right_led_2_on();
     ergodox_right_led_3_on();
-}
-
-void ergodox_right_leds_off()
-{
+    tap_code16(keycode);
+    wait_ms(50);
     ergodox_right_led_1_off();
     ergodox_right_led_2_off();
     ergodox_right_led_3_off();
@@ -224,109 +221,73 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case LT(0,KC_1):
                 // https://github.com/qmk/qmk_firmware/blob/master/docs/mod_tap.md#intercepting-mod-taps=
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F1); // Intercept hold function to send F1
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F1);
                     return false;
                 }
                 return true;
             case LT(0,KC_2):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F2); // Intercept hold function to send F2
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F2);
                     return false;
                 }
                 return true;
             case LT(0,KC_3):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F3); // Intercept hold function to send F3
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F3);
                     return false;
                 }
                 return true;
             case LT(0,KC_4):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F4); // Intercept hold function to send F4
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F4);
                     return false;
                 }
                 return true;
             case LT(0,KC_5):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F5); // Intercept hold function to send F5
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F5);
                     return false;
                 }
                 return true;
             case LT(0,KC_6):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F6); // Intercept hold function to send F6
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F6);
                     return false;
                 }
                 return true;
             case LT(0,KC_7):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F7); // Intercept hold function to send F7
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F7);
                     return false;
                 }
                 return true;
             case LT(0,KC_8):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F8); // Intercept hold function to send F8
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F8);
                     return false;
                 }
                 return true;
             case LT(0,KC_9):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F9); // Intercept hold function to send F9
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F9);
                     return false;
                 }
                 return true;
             case LT(0,KC_0):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F10); // Intercept hold function to send F10
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F10);
                     return false;
                 }
                 return true;
             case LT(0,KC_MINS):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F11); // Intercept hold function to send F11
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F11);
                     return false;
                 }
                 return true;
             case LT(0,KC_BSLS):
                 if (!record->tap.count && record->event.pressed) {
-                    ergodox_right_leds_on();
-                    tap_code16(KC_F12); // Intercept hold function to send F12
-                    wait_ms(50);
-                    ergodox_right_leds_off();
+                    tap_code16_with_leds(KC_F12);
                     return false;
                 }
                 return true;
