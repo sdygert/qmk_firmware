@@ -54,7 +54,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM    200
 #define PERMISSIVE_HOLD // add permissive hold. see https://docs.qmk.fm/#/tap_hold
-#define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
+// https://docs.qmk.fm/#/tap_hold?id=ignore-mod-tap-interrupt
+// this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
+#define IGNORE_MOD_TAP_INTERRUPT // Ignore mod tap interrupt to prevent mistyping
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
