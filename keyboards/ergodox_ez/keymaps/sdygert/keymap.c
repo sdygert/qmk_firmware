@@ -16,11 +16,6 @@ enum layers {
 enum custom_keycodes {
     VRSN = SAFE_RANGE,
     k
-// #ifdef ORYX_CONFIGURATOR
-//     VRSN = EZ_SAFE_RANGE,k
-// #else
-//     VRSN = SAFE_RANGE,
-// #endif
 };
 
 // https://docs.qmk.fm/#/feature_tap_dance
@@ -46,26 +41,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
  * |--------+------+------+------+------+------|  L1  |           |  L2  |------+------+------+------+------+--------|
- * |LShft/CW|Z/Ctrl|X/Alt |C/Shft|   V  |   B  |      |           |      |   N  |   M  |,/Shft|./Alt |//Ctrl|RShft/CL|
+ * | LShft  |Z/Ctrl|X/Alt |C/Shft|   V  |   B  |      |           |      |   N  |   M  |,/Shft|./Alt |//Ctrl| RShft  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |   =  |PrtScn|      | Left | Right|                                       |  Up  | Down |   [  |   ]  |  L3  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
- *                                        |AppAlt| LGui |       | Alt  |Ctrl/Esc|
+ *                                        | Alt  | LGui |       | Alt  |  Esc   |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Home |       | PgUp |        |      |
- *                                 | Space|Backsp|------|       |------|  Tab   |Enter |
- *                                 |      |ace   | End  |       | PgDn |        |      |
+ *                                 | Space| BkSp |------|       |------|  Tab   |Enter |
+ *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
   // left hand
   KC_GRV,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_LEFT,              KC_RGHT,  LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
   KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,                KC_NO,    KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
-  KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
+  KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), LT(0,KC_QUOT),
   KC_LSFT,  LT(0,KC_Z),     LT(0,KC_X),     LT(0,KC_C),     KC_V,           KC_B,           TG(SYMB),             TG(MDIA), KC_N,           KC_M,           LT(0,KC_COMM),  LT(0,KC_DOT),      LT(0,KC_SLSH),     TD(TD_RSFT_CAPS_L),
   KC_EQL,   KC_PSCR,        KC_NO,          KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
-                                                                            ALT_T(KC_APP),  KC_LGUI,              KC_LALT,  CTL_T(KC_ESC),
+                                                                            KC_LALT,        KC_LGUI,              KC_LALT,  KC_ESC,
                                                                                             KC_HOME,              KC_PGUP,
                                                             KC_SPC,         KC_BSPC,        KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
 ),
@@ -347,8 +342,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     return false;
                 }
                 return true;
-
-
+            case LT(0,KC_QUOT):
+                if (!record->tap.count && record->event.pressed) {
+                    hold_code_with_leds(KC_RGUI);
+                    return false;
+                }
+                return true;
         }
     }
     return true;
@@ -384,6 +383,11 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LT(0,KC_SLSH):
             if (!record->tap.count) {
                 release_code_with_leds(KC_RCTL);
+            }
+            break;
+        case LT(0,KC_QUOT):
+            if (!record->tap.count) {
+                release_code_with_leds(KC_RGUI);
             }
             break;
     }
