@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   `    | 1/F1 | 2/F2 | 3/F3 | 4/F4 | 5/F5 | LEFT |           | RIGHT| 6/F6 | 7/F7 | 8/F8 | 9/F9 | 0/F10| -/F11  |
+ * |   `    | 1/F1 | 2/F2 | 3/F3 | 4/F4 | 5/F5 |      |           |      | 6/F6 | 7/F7 | 8/F8 | 9/F9 | 0/F10| -/F11  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Del    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  | \/F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -49,20 +49,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | Alt  | LGui |       | Alt  |  Esc   |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Home |       | PgUp |        |      |
- *                                 | Space| BkSp |------|       |------|  Tab   |Enter |
+ *                                 | Space|      |------|       |------|  Tab   |Enter |
  *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
   // left hand
-  KC_GRV,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_LEFT,              KC_RGHT,  LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
+  KC_GRV,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_NO,                KC_NO,    LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
   KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,                KC_NO,    KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
   KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), LT(0,KC_QUOT),
   KC_LSFT,  LT(0,KC_Z),     LT(0,KC_X),     LT(0,KC_C),     KC_V,           KC_B,           TG(SYMB),             TG(MDIA), KC_N,           KC_M,           LT(0,KC_COMM),  LT(0,KC_DOT),      LT(0,KC_SLSH),     TD(TD_RSFT_CAPS_L),
   KC_EQL,   KC_PSCR,        KC_NO,          KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
                                                                             KC_LALT,        KC_LGUI,              KC_LALT,  KC_ESC,
                                                                                             KC_HOME,              KC_PGUP,
-                                                            KC_SPC,         KC_BSPC,        KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
+                                                            KC_SPC,         KC_NO,          KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
 ),
 /* Keymap 1: Symbol Layer
  *
@@ -196,8 +196,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // clang-format on
-
-// bool is_active_rctl = false;
 
 void tap_code_with_leds(uint16_t keycode)
 {
