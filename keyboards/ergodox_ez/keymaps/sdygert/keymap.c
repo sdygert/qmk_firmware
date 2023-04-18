@@ -2,8 +2,6 @@
 #include "version.h"
 
 static void tap_code_with_leds(uint16_t keycode);
-static void hold_code_with_leds(uint16_t keycode);
-static void release_code_with_leds(uint16_t keycode);
 
 enum layers {
     BASE,  // default layer
@@ -57,8 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // left hand
   KC_GRV,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_NO,                KC_NO,    LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
   KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,                KC_NO,    KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
-  KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), LT(0,KC_QUOT),
-  KC_LSFT,  LT(0,KC_Z),     LT(0,KC_X),     LT(0,KC_C),     KC_V,           KC_B,           TG(SYMB),             TG(MDIA), KC_N,           KC_M,           LT(0,KC_COMM),  LT(0,KC_DOT),      LT(0,KC_SLSH),     TD(TD_RSFT_CAPS_L),
+  KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
+  KC_LSFT,  CTL_T(KC_Z),    ALT_T(KC_X),    SFT_T(KC_C),    KC_V,           KC_B,           TG(SYMB),             TG(MDIA), KC_N,           KC_M,           SFT_T(KC_COMM), ALT_T(KC_DOT),     CTL_T(KC_SLSH),    TD(TD_RSFT_CAPS_L),
   KC_EQL,   KC_PSCR,        KC_NO,          KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
                                                                             KC_LALT,        KC_LGUI,              KC_LALT,  KC_ESC,
                                                                                             KC_HOME,              KC_PGUP,
@@ -209,22 +207,6 @@ void tap_code_with_leds(uint16_t keycode)
     ergodox_right_led_3_off();
 }
 
-void hold_code_with_leds(uint16_t keycode)
-{
-    ergodox_right_led_1_on();
-    ergodox_right_led_2_on();
-    ergodox_right_led_3_on();
-    register_code(keycode);
-}
-
-void release_code_with_leds(uint16_t keycode)
-{
-    unregister_code(keycode);
-    ergodox_right_led_1_off();
-    ergodox_right_led_2_off();
-    ergodox_right_led_3_off();
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
@@ -304,91 +286,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     return false;
                 }
                 return true;
-            case LT(0,KC_Z):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_LCTL);
-                    return false;
-                }
-                return true;
-            case LT(0,KC_X):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_LALT);
-                    return false;
-                }
-                return true;
-            case LT(0,KC_C):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_LSFT);
-                    return false;
-                }
-                return true;
-            case LT(0,KC_COMM):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_RSFT);
-                    return false;
-                }
-                return true;
-            case LT(0,KC_DOT):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_RALT);
-                    return false;
-                }
-                return true;
-            case LT(0,KC_SLSH):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_RCTL);
-                    return false;
-                }
-                return true;
-            case LT(0,KC_QUOT):
-                if (!record->tap.count && record->event.pressed) {
-                    hold_code_with_leds(KC_RGUI);
-                    return false;
-                }
-                return true;
         }
     }
     return true;
-}
-
-void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(0,KC_Z):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_LCTL);
-            }
-            break;
-        case LT(0,KC_X):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_LALT);
-            }
-            break;
-        case LT(0,KC_C):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_LSFT);
-            }
-            break;
-        case LT(0,KC_COMM):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_RSFT);
-            }
-            break;
-        case LT(0,KC_DOT):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_RALT);
-            }
-            break;
-        case LT(0,KC_SLSH):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_RCTL);
-            }
-            break;
-        case LT(0,KC_QUOT):
-            if (!record->tap.count) {
-                release_code_with_leds(KC_RGUI);
-            }
-            break;
-    }
 }
 
 // Runs just one time when the keyboard initializes.
