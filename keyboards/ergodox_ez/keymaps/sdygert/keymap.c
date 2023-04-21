@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  L1  |           |  L2  |------+------+------+------+------+--------|
  * | LShft  |Z/Ctrl|X/Alt |C/Shft|   V  |   B  |      |           |      |   N  |   M  |,/Shft|./Alt |//Ctrl| RShft  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |   =  |PrtScn|      | Left | Right|                                       |  Up  | Down |   [  |   ]  |  L3  |
+ *   |   =  |  [   |  ]   | Left | Right|                                       |  Up  | Down |      |PntScr|  L3  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | Alt  | LGui |       | Alt  |  Esc   |
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,                KC_NO,    KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
   KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
   KC_LSFT,  CTL_T(KC_Z),    ALT_T(KC_X),    SFT_T(KC_C),    KC_V,           KC_B,           TG(SYMB),             TG(MDIA), KC_N,           KC_M,           SFT_T(KC_COMM), ALT_T(KC_DOT),     CTL_T(KC_SLSH),    TD(TD_RSFT_CAPS_L),
-  KC_EQL,   KC_PSCR,        KC_NO,          KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_LBRC,        KC_RBRC,           TG(GAME),
+  KC_EQL,   KC_LBRC,        KC_RBRC,        KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_NO,          KC_PSCR,           TG(GAME),
                                                                             KC_LALT,        KC_LGUI,              KC_LALT,  KC_ESC,
                                                                                             KC_HOME,              KC_PGUP,
                                                             KC_SPC,         KC_NO,          KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
