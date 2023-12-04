@@ -91,6 +91,7 @@ tags
 *.mpeg
 *.ttf
 *.otf
+!**/sdygert/keyboard_*.png
 
 # Things Travis sees
 /.vs
