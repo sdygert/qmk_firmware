@@ -102,6 +102,7 @@ tags
 !docs/public/**.jpg
 !docs/public/**.jpeg
 !docs/public/**.png
+!**/sdygert/keyboard_*.png
 
 # Things Travis sees
 /.vs
