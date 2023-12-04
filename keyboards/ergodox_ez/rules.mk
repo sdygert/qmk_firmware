@@ -23,8 +23,8 @@ CAPS_WORD_ENABLE= yes	# Enable Caps Word https://docs.qmk.fm/#/feature_caps_word
 TAP_DANCE_ENABLE= yes	# Enable tap dance https://docs.qmk.fm/#/feature_tap_dance
 
 RGB_MATRIX_ENABLE = no # Enable Glow
-RGB_MATRIX_DRIVER = IS31FL3731
-DEBOUNCE_TYPE = sym_eager_pr
+# RGB_MATRIX_DRIVER = IS31FL3731
+# DEBOUNCE_TYPE = sym_eager_pr
 
 # project specific files
 SRC += matrix.c
