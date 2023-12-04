@@ -54,7 +54,7 @@
             "url": "./data/schemas/keymap.jsonschema"
         }
     ],
-	"editor.formatOnSave": false,
+    "editor.formatOnSave": false,
     "cmake.configureOnOpen": true,
     "terminal.integrated.profiles.windows": {
         "QMK_MSYS": {
