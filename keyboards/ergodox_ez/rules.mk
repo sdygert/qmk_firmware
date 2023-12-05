@@ -37,3 +37,6 @@ BACKLIGHT_SUPPORTED = no
 MOUSE_SHARED_EP = no
 
 DEFAULT_FOLDER = ergodox_ez/base
+
+# https://docs.qmk.fm/#/feature_dynamic_macros
+DYNAMIC_MARCO_ENABLE = yes
