@@ -33,15 +33,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   `    | 1/F1 | 2/F2 | 3/F3 | 4/F4 | 5/F5 |      |           |      | 6/F6 | 7/F7 | 8/F8 | 9/F9 | 0/F10| -/F11  |
+ * |   `    | 1/F1 | 2/F2 | 3/F3 | 4/F4 | 5/F5 |DMREC1|           |DMREC2| 6/F6 | 7/F7 | 8/F8 | 9/F9 | 0/F10| -/F11  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Del    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  | \/F12  |
+ * | Del    |   Q  |   W  |   E  |   R  |   T  |DMPLY1|           |DMPLY2|   Y  |   U  |   I  |   O  |   P  | \/F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
  * |--------+------+------+------+------+------|  L1  |           |  L2  |------+------+------+------+------+--------|
  * | LShft  |Z/Ctrl|X/Alt |C/Shft|V/Meh |   B  |      |           |      |   N  |M/Meh |,/Shft|./Alt |//Ctrl| RShft  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |   =  |  [   |  ]   | Left | Right|                                       |  Up  | Down |      |      | PntScr |
+ *   |   =  |  [   |  ]   | Left | Right|                                       |  Up  | Down |      |DMRSTP| PntScr |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | Alt  | LGui |       | Alt  |  Esc   |
@@ -53,11 +53,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [BASE] = LAYOUT_ergodox_pretty(
   // left hand
-  KC_GRV,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     KC_NO,                KC_NO,    LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
-  KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,                KC_NO,    KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
+  KC_GRV,   LT(0,KC_1),     LT(0,KC_2),     LT(0,KC_3),     LT(0,KC_4),     LT(0,KC_5),     DM_REC1,              DM_REC2,  LT(0,KC_6),     LT(0,KC_7),     LT(0,KC_8),     LT(0,KC_9),        LT(0,KC_0),        LT(0,KC_MINS),
+  KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           DM_PLY1,              DM_PLY2,  KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
   KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(2,KC_SCLN),     GUI_T(KC_QUOT),
   KC_LSFT,  CTL_T(KC_Z),    ALT_T(KC_X),    SFT_T(KC_C),    MEH_T(KC_V),    KC_B,           TG(1),                TG(2),    KC_N,           MEH_T(KC_M),    SFT_T(KC_COMM), ALT_T(KC_DOT),     CTL_T(KC_SLSH),    TD(TD_RSFT_CAPS_L),
-  KC_EQL,   KC_LBRC,        KC_RBRC,        KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_NO,          KC_NO,             KC_PSCR,
+  KC_EQL,   KC_LBRC,        KC_RBRC,        KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_NO,          DM_RSTP,           KC_PSCR,
                                                                             KC_LALT,        KC_LGUI,              KC_LALT,  KC_ESC,
                                                                                             KC_HOME,              KC_PGUP,
                                                             KC_SPC,         TG(2),          KC_END,               KC_PGDN,  KC_TAB,         KC_ENT

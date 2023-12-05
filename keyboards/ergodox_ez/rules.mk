@@ -35,3 +35,6 @@ AUDIO_SUPPORTED = no
 BACKLIGHT_SUPPORTED = no
 
 MOUSE_SHARED_EP = no
+
+# https://docs.qmk.fm/#/feature_dynamic_macros
+DYNAMIC_MARCO_ENABLE = yes
