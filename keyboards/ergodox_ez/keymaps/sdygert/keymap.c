@@ -29,13 +29,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |  L2  |------+------+------+------+------+--------|
  * | LShft  |Z/Ctrl|X/Alt |C/Shft|V/Meh |   B  |      |           |      |   N  |M/Meh |,/Shft|./Alt |//Ctrl| RShft  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |   =  |  [   |  ]   | Left | Right|                                       |  Up  | Down |      |      | PntScr |
+ *   |   =  |  [   |  ]   | Left | Right|                                       |  Up  | Down |      | Caps | PntScr |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | Alt  | LGui |       | Alt  |  Esc   |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Home |       | PgUp |        |      |
- *                                 | Space| Caps |------|       |------|  Tab   |Enter |
+ *                                 | Space|      |------|       |------|  Tab   |Enter |
  *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -45,10 +45,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_DEL,   KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           DM_PLY1,              TG(1),    KC_Y,           KC_U,           KC_I,           KC_O,              KC_P,              LT(0,KC_BSLS),
   KC_BSPC,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,              LT(2,KC_SCLN),     GUI_T(KC_QUOT),
   KC_LSFT,  CTL_T(KC_Z),    ALT_T(KC_X),    SFT_T(KC_C),    MEH_T(KC_V),    KC_B,           KC_NO,                TG(2),    KC_N,           MEH_T(KC_M),    SFT_T(KC_COMM), ALT_T(KC_DOT),     CTL_T(KC_SLSH),    KC_RSFT,
-  KC_EQL,   KC_LBRC,        KC_RBRC,        KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_NO,          KC_NO,             KC_PSCR,
+  KC_EQL,   KC_LBRC,        KC_RBRC,        KC_LEFT,        KC_RGHT,                                                        KC_UP,          KC_DOWN,        KC_NO,          KC_CAPS,           KC_PSCR,
                                                                             KC_LALT,        KC_LGUI,              KC_LALT,  KC_ESC,
                                                                                             KC_HOME,              KC_PGUP,
-                                                            KC_SPC,         KC_CAPS,        KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
+                                                            KC_SPC,         KC_NO,          KC_END,               KC_PGDN,  KC_TAB,         KC_ENT
 ),
 /* Keymap 1: Symbol Layer
  *
