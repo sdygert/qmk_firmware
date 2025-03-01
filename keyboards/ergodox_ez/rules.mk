@@ -5,9 +5,6 @@
 
 ORYX_ENABLE = yes
 
-# Build Options
-#   change yes to no to disable
-#
 BOOTMAGIC_ENABLE = no   # Enable Bootmagic Lite
 MOUSEKEY_ENABLE  = yes  # Mouse keys
 EXTRAKEY_ENABLE  = yes  # Audio control and System control
@@ -35,8 +32,6 @@ AUDIO_SUPPORTED = no
 BACKLIGHT_SUPPORTED = no
 
 MOUSE_SHARED_EP = no
-
-DEFAULT_FOLDER = ergodox_ez/base
 
 # https://docs.qmk.fm/#/feature_dynamic_macros
 DYNAMIC_MACRO_ENABLE = yes
