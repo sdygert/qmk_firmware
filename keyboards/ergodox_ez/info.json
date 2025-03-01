@@ -8,8 +8,8 @@
     },
     "qmk": {
         "locking": {
-            "enabled": true,
-            "resync": true
+            "enabled": true, // Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap
+            "resync": true   // Locking resynchronize hack
         }
     },
     "rgblight": {

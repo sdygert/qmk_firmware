@@ -62,11 +62,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
 // #define IGNORE_MOD_TAP_INTERRUPT // Ignore mod tap interrupt to prevent mistyping
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
-
 /* key combination for command */
 #define IS_COMMAND() ( \
     get_mods() == (MOD_BIT(KC_LCTL) | MOD_BIT(KC_RCTL)) || \
@@ -130,9 +125,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DRIVER_1_LED_TOTAL 24
 #define DRIVER_2_LED_TOTAL 24
 #define RGB_MATRIX_LED_COUNT (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL)
-
-#define RGB_MATRIX_LED_PROCESS_LIMIT 5
-#define RGB_MATRIX_LED_FLUSH_LIMIT 26
 
 // #define ENABLE_RGB_MATRIX_SOLID_COLOR
 // RGB Matrix Animation modes. Explicitly enabled
