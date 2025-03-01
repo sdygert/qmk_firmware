@@ -284,9 +284,6 @@ void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_COLOR_LAYER_0
     rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
 #endif
-
-    // disable the rgb matrix
-    rgb_matrix_disable();
 };
 
 // Runs whenever there is a layer state change.
