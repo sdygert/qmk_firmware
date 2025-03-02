@@ -1,3 +1,5 @@
+// Copyright 2025 Seth Dygert sdygert@gmail.com
+
 #include QMK_KEYBOARD_H
 #include "version.h"
 
