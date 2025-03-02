@@ -13,7 +13,6 @@ SWAP_HANDS_ENABLE= no   # Allow swapping hands of keyboard
 
 KEY_LOCK_ENABLE = yes   # Enable Key Lock
 CAPS_WORD_ENABLE= no	# Enable Caps Word https://docs.qmk.fm/#/feature_caps_word
-TAP_DANCE_ENABLE= no	# Enable tap dance https://docs.qmk.fm/#/feature_tap_dance
 
 RGB_MATRIX_ENABLE = no # Enable Glow
 # RGB_MATRIX_DRIVER = IS31FL3731
